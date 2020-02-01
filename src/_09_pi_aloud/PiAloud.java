@@ -6,6 +6,8 @@ package _09_pi_aloud;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class PiAloud {
 
 	// 1. Make a main method and make sure your program can run
@@ -22,7 +24,16 @@ public class PiAloud {
 	// *6. Get a character from the user using the getInputFromUser() method
 	// *7. Compare the users' char to the next digit of Pi
 	// *8. If they are correct, print out "correct". If they are not, print "incorrect" to System.err.println
-
+public static void main(String[]args) {
+	String pi = "3.14159265358979323846264338327950288419716939937510582097494459230781640628620899";
+	
+	
+	for (int i=0; i<pi.length();i++) {
+		System.out.println(pi.charAt(i));
+		speak(pi.charAt(i));
+	}
+	
+}
 	static void speak(char characterToSpeak) {
 		try {
 			Runtime.getRuntime().exec("say " + characterToSpeak).waitFor();
